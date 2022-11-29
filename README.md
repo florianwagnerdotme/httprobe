@@ -29,10 +29,17 @@ https://example.net
 ## Extra Probes
 
 By default httprobe checks for HTTP on port 80 and HTTPS on port 443. You can add additional
-probes with the `-p` flag by specifying a protocol and port pair:
+probes with the `-p` flag by specifying a protocol and port pair.
+Additionally there is the option to use either predefined lists of ports by specifing `-p large` or `-p xlarge`
+or to define a custom port list within the code itself. Use this custom port list by giving the argument `-p customPorts`.
+Search in main for "customPorts" to find the position to specify your own set of custom ports.
 
 ```
 ▶ cat domains.txt | httprobe -p http:81 -p https:8443
+▶ cat domains.txt | httprobe -p large
+▶ cat domains.txt | httprobe -p xlarge
+▶ cat domains.txt | httprobe -p customPorts
+
 ```
 
 ## Concurrency
